@@ -1,42 +1,17 @@
-def calculadora():
-    while True:
-        print("\n menu da calculadora")
-        print("1. soma")
-        print("2. subtraçao")
-        print("3. multiplicaçao")
-        print("4. divisao")
-        print("5. sair")
-        
-        opçao = input("\n escolhe uma opçao ai (1-5): ")
+def resumo(notas):
+    soma = 0
 
-        if opçao == '5':
-            print("adeus, vlw")
-            break 
+    for n in notas:
+        soma = soma + n
 
-        if opçao in ['1', '2', '3', '4']:
-            
-            n1 = float(input("digite o primeiro valor: "))
-            n2 = float(input("digite o segundo valor: "))
+    media = soma / len(notas)
+    maior = max(notas)
+    menor = min(notas)
 
-            if opçao == '1':
-                res = n1 + n2
-                print("o resultado deu:", res)
-            
-            elif opçao == '2':
-                res = n1 - n2
-                print("o resultado deu:", res)
-            
-            elif opçao == '3':
-                res = n1 * n2
-                print("o resultado deu:", res)
-            
-            elif opçao == '4':
-                if n2 != 0:
-                    res = n1 / n2
-                    print("o resultado deu:", res)
-                else:
-                    print("erro: um da pra dividir por zero!")
-        else:
-            print("opçao errada! tenta de novo.")
+    print("soma:", soma)
+    print("media:", media)
+    print("maior:", maior)
+    print("menor:", menor)
 
-calculadora()
+lista = [7, 8, 6, 9, 10]
+resumo(lista)
